@@ -10,6 +10,11 @@ services:
       - "9092:9092"
       - "9094:9094"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: localhost # host.docker.internal if you want to try it using the scripts inside the docker image
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ADVERTISED_PORT: 9092
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: "PRODUCT_CANCELLATION_SUCCEEDED:1:1,PRODUCT_CANCELLATION_FAILED:1:1" #examples, change with correct topics
+      ZK_SERVER: zookeeper:2181
+      ADVERTISED_HOST: localhost
+      CONSUMER_THREADS: 5
+      BROKER_ID: 1
+      ADVERTISED_PORT: 9092
